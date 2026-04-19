@@ -20,11 +20,11 @@ const collectionName = "moviesCollection";
 const uri = process.env.MONGO_CONNECTION_STRING;
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
-app.get("https://samabramterp.onrender.com/", async (req, res) => {
+app.get("samabramterp.onrender.com/", async (req, res) => {
    res.send(`My Deployment`);
 });
 
-app.get("/https://samabramterp.onrender.com/insertMovies", async (req, res) => {
+app.get("samabramterp.onrender.com/insertMovies", async (req, res) => {
     try {
       await client.connect();
       const collection = client.db(databaseName).collection(collectionName);
@@ -46,7 +46,7 @@ app.get("/https://samabramterp.onrender.com/insertMovies", async (req, res) => {
    }
 });
 
-app.get("https://samabramterp.onrender.com/listMovies", async (req, res) => {
+app.get("samabramterp.onrender.com/listMovies", async (req, res) => {
    
     try {
       await client.connect();
@@ -67,7 +67,7 @@ app.get("https://samabramterp.onrender.com/listMovies", async (req, res) => {
    }
 });
 
-app.get("https://samabramterp.onrender.com/clearCollection", async (req, res) => {
+app.get("samabramterp.onrender.com/clearCollection", async (req, res) => {
     try {
       await client.connect();
       
@@ -81,7 +81,7 @@ app.get("https://samabramterp.onrender.com/clearCollection", async (req, res) =>
    }
 });
 
-app.get("https://samabramterp.onrender.com/getSummary", (req, res) => {
+app.get("samabramterp.onrender.com/getSummary", (req, res) => {
    const variables = { year: 2025 };
    res.render("summary", variables);
 });
