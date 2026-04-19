@@ -87,5 +87,5 @@ app.get("/getSummary", (req, res) => {
 });
 
 
-// app.listen(portNumber);
+app.listen(portNumber,"0.0.0.0");
 console.log(`main URL http://localhost:${portNumber}/`);
