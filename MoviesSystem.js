@@ -21,6 +21,8 @@ const uri = process.env.MONGO_CONNECTION_STRING;
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 app.get("/", async (req, res) => {
+   await client.connect();
+   const collection = client.db(databaseName).collection(collectionName);
    res.send(`My Deployment`);
 });
 
